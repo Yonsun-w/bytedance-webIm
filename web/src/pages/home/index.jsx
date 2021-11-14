@@ -5,7 +5,7 @@ export default class Home extends Component{
 render(){
     return(
    
-      <div>主页</div>
+      <div>Home</div>
 
     )
 }

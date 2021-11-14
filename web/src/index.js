@@ -1,8 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+ // index.js
+ import React from 'react'
+ import ReactDOM from 'react-dom'
+ import AppRouter from "./router"
 
-// 页面渲染
-ReactDOM.render(<App/>,
-    document.getElementById('root')
-)
+ ReactDOM.render(
+     <AppRouter></AppRouter>,
+     document.getElementById('root')
+ )
