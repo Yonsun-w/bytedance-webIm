@@ -42,7 +42,6 @@ class LoginForm extends React.Component {
                     this.props.history.push("/")
                 },
                 (err) => {
-                    console.log("你好")
                     console.log(err)
                     this.setState({ errors: 
                         {

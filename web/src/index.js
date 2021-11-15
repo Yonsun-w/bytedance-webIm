@@ -8,7 +8,6 @@ import { BrowserRouter as Router } from "react-router-dom"
 import Nav from "./components/Nav"
 import FlashMessageList from "./components/flash/FlashMessageList"
 import setAuthorizationToken from "./utils/setAuthorizationToken"
-import jwtDecode from "jwt-decode"
 import { setCurrentInfo } from "./actions/loginActions"
 
 const store = initStore();

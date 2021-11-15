@@ -3,7 +3,8 @@ import isEmpty from "lodash/isEmpty"
 
 const initState = {
     isAuthenticated:false,
-    user:{}
+    user:{},
+    value:'测试一下'
 }
 const login = (state = initState,action) =>{
     switch(action.type){
