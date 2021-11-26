@@ -73,7 +73,8 @@ app.post('/login', (req, res) => {
                 res.send({
                     code: 0,
                     token: token.setToken(resault[0].UUID),
-                    msg: '登录成功'
+                    msg: '登录成功',
+                    list:resault//11.26添加
                 })
             } else {
                 res.send({
