@@ -3,12 +3,66 @@ import {token} from '../model/token.js';
 import {user} from '../model/user.js';
 import {project} from '../model/project.js';
 import {page} from '../model/page.js';
+import {contact} from '../model/contact.js';//11.26加入
 import md5 from 'md5';
 import moment from 'moment';
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
+
+
+//11.26加入
+app.post('/findFriends',(req,res)=>{
+    let data  = req.body;
+    //console.log(data)
+    // data.forEach(element => {
+    //     console.log(element)
+    // });
+    contact.find(data.userName,resault=>{
+        try{
+            if(!resault){
+                res.send({
+                    code:1,
+                    msg:'好友为空',
+                    
+                })
+            }else{
+                res.send({
+                    code:0,
+                    msg:'查找成功',
+                    list:resault
+                })
+            }
+        }catch(err){
+            res.send({
+                code:2,
+                msg:'服务器出错'
+            })
+        }
+    })
+})
+
+//11.26加入
+app.post('/addFriends',(req,res)=>{
+    let data = req.body
+    let currenttime = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
+    contact.insert(data.userName,data.friendName,currenttime,resualt=>{
+        try{ 
+                res.send({
+                    code:0,
+                    msg:'查找成功',
+                    list:resualt
+                })
+        }catch(err){
+            res.send({
+                code:2,
+                msg:err
+            })
+        }
+    })
+})
+
 
 app.post('/login', (req, res) => {
     let data = req.body;
