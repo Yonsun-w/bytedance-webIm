@@ -2,11 +2,11 @@ import mysql from 'mysql2';
 import { config } from '../config';
 
 const conn = mysql.createConnection({
-    host: config.host,
-    user: config.username,
-    database: config.database,
-    password: config.password,
-    port: config.port
+    host: 'localhost',
+    user: 'root',
+    database:'webim',
+    password: '123',
+    port: '3306'
 });
 
 export { conn }
